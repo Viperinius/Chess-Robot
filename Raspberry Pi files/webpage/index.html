@@ -37,7 +37,7 @@
     <div class="header-fixed-placeholder"></div>
 
 
-    <div data-spy="scroll" data-target="#navbar-menu" data-offset="0" class="container-fluid mt-4">
+    <div data-spy="scroll" data-target="#navbar-menu" data-offset="0" class="container-fluid mt-4 mb-4">
         <div id="home">
             <h1 class="display-1 text-center">Welcome to the ChessRobot!</h1>
             <br>
@@ -47,21 +47,26 @@
         <div id="play">
             <h1 class="display-2 text-center">Play now!</h1>
             <br>
-            <div id="chessBoard" style="width: 400px" class="mx-auto"></div>
+            <div id="chessBoard" style="width: 30%" class="mx-auto"></div>
+
+            <br>
+            <h1 class="display-4 text-center" id="status"></h1>
 
             <br>
             <div class="mx-auto text-center">
-                <button type="button" class="btn btn-outline-secondary" id="clear">clear</button>
-                <button type="button" class="btn btn-outline-danger" id="resetBoard">Reset board</button>
+                <button type="button" class="btn btn-outline-secondary" id="btnFlipSide">Change playing side</button>
+                <button type="button" class="btn btn-outline-secondary" id="btnToggleValidMoves">Show valid moves</button>
+                <button type="button" class="btn btn-outline-danger" id="btnResetBoard">Start position</button>
             </div>
         </div>
 
         
     </div>
     
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
     <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
     <script src="index.js"></script>
     <script>
