@@ -7,6 +7,8 @@
 var game = new Chess();
 var $status = $('#status');
 
+var whiteSquareGrey = '#a9a9a9';
+var blackSquareGrey = '#696969';
 
 var board = Chessboard('chessBoard', {
     position: 'start',
@@ -16,7 +18,9 @@ var board = Chessboard('chessBoard', {
     snapSpeed: 100,
     onSnapEnd: onPieceSnapEnd,
     onDrop: onPieceDrop,
-    onDragStart: onDragPieceStart
+    onDragStart: onDragPieceStart,
+    onMouseoutSquare: onMouseOutSquare,
+    onMouseoverSquare: onMouseOverSquare
 });
 
 $(window).resize(board.resize);
@@ -35,6 +39,8 @@ $('#btnFlipSide').on('click', function() {
 $('#btnResetBoard').on('click', function() {
     //set start position
     board.position('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR');
+    game.reset();
+    updateStatus();
     //send to python
 });
 
@@ -50,6 +56,8 @@ updateStatus();
 //-----------------------------------------------------
 
 function onPieceDrop(source, target, piece, newPos, oldPos, orientation) {
+    removeHighlighting();
+
     // if promotion is needed, always promotes to queen (!)
     var move = game.move({
         from: source,
@@ -82,6 +90,26 @@ function onDragPieceStart(source, piece, position, orientation) {
     }
 }
 
+function onMouseOverSquare (square, piece) {
+    var moves = game.moves({
+        square: square,
+        verbose: true
+    });
+
+    if (moves.length === 0) {
+        return;
+    }
+
+    highlighting(square);
+    for (let i = 0; i < moves.length; i++) {
+        highlighting(moves[i].to);        
+    }
+}
+
+function onMouseOutSquare(square, piece) {
+    removeHighlighting();
+}
+
 function updateStatus() {
     var status = '';
     var moveColour = 'White';
@@ -107,6 +135,20 @@ function updateStatus() {
     }
 
     $status.html(status);
+}
+
+function removeHighlighting() {
+    $('#chessBoard .square-55d63').css('background', '');
+}
+
+function highlighting(square) {
+    var $square = $('#chessBoard .square-' + square);
+    var bg = whiteSquareGrey;
+    if ($square.hasClass('black-3c85d')) {
+        bg = blackSquareGrey;
+    }
+
+    $square.css('background', bg);
 }
 
 
