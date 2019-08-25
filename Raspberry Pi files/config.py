@@ -8,7 +8,7 @@
 # Stockfish settings
 #####################
 # set path to binary
-STOCKFISH_PATH = "X:\stockfish-10-win\Windows\stockfish_10_x64"
+STOCKFISH_PATH = r"X:\stockfish-10-win\Windows\stockfish_10_x64"
 
 # don't write debug to log
 STOCKFISH_LOG = "false"
@@ -42,3 +42,19 @@ STOCKFISH_SLOW = 80
 
 # disable UCI Chess960
 STOCKFISH_CHESS960 = "false"
+
+
+#####################
+# Arduino settings
+#####################
+# set baud rate
+ARDUINO_BAUD = 9600
+
+# set serial ports
+#ARDUINO_SENSOR_PORT = '/dev/ttyUSB0'
+ARDUINO_SENSOR_PORT = 'com7'
+#ARDUINO_ACTUATOR_PORT = '/dev/ttyUSB1'
+ARDUINO_ACTUATOR_PORT = 'com5'
+
+# don't use any parity (if set true, uses even parity)
+ARDUINO_PARITY = False
