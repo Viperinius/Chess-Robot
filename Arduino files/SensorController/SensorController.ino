@@ -33,7 +33,18 @@
 //-----------------------------------------
 
 #define BAUD_RATE 9600
+#define SLEEP_MS 500
+#define SLEEP_MS_NEW_GAME 90000	// = 1.5 min
+#define REQUEST_POS 10
+#define REQUEST_NEW_GAME 20
+#define MODE_BOARD 1
+#define MODE_WEB 2
 
+#define REQ_POS_MSG "<SEND_CURR_POS>"
+#define REQ_NEW_GAME_MSG "<RESET_GAME>"
+#define COMM_READY_MSG "<SENSORS_COMM_READY>"
+#define MODE_MSG_BOARD "<MODE_BOARD>"
+#define MODE_MSG_WEB "<MODE_WEB>"
 
 //-----------------------------------------
 //				Variables
@@ -45,7 +56,7 @@ Adafruit_MCP23017 mcpRow34;
 Adafruit_MCP23017 mcpRow56;
 Adafruit_MCP23017 mcpRow78;
 
-
+// keep starting positions at hand for easy copying
 const int iStartPos[8][8] = {
 	{ 1,1,1,1,1,1,1,1 },
 	{ 1,1,1,1,1,1,1,1 },
@@ -57,15 +68,22 @@ const int iStartPos[8][8] = {
 	{ 1,1,1,1,1,1,1,1 }
 };
 
+// arrays to save read positions
 int iPrevPos[8][8];
 int iCurrPos[8][8];
+
+// status if / what serial message received
+int iSerialMsg;
+
+// contains detected move with board columns as numbers instead of letters
+int iMove;
+
+// "play mode", either board only (MODE_BOARD) or on web page (MODE_WEB)
+uint8_t uiMode;
 
 //-----------------------------------------
 //				Functions
 //-----------------------------------------
-
-
-
 
 
 void resetBoardArr() {
@@ -79,13 +97,39 @@ void resetBoardArr() {
 	}
 }
 
-String generateMoveString(int iSrcI, int iSrcJ, int iDestI, int iDestJ) {
-	return String(letterFromNum(iSrcJ)) + String(iSrcI) + String(letterFromNum(iDestJ)) + String(iDestI);
+void copyCurrToPrevPos() {
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+		{
+			iPrevPos[i][j] = iCurrPos[i][j];
+		}
+	}
 }
 
-char letterFromNum(int iNum) {
-	return "abcdefgh"[iNum - 1];
+int generateMoveVar(int iSrcI, int iSrcJ, int iDestI, int iDestJ) {
+	//returns move with columns as numbers instead of letters
+	return iSrcJ * 1000 + iSrcI * 100 + iDestJ * 10 + iDestI;
 }
+
+
+int comparePositions() {
+	int iSrcI;
+	int iSrcJ;
+	int iDestI;
+	int iDestJ;
+
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++)
+		{
+			//bla blub
+		}
+	}
+
+	return generateMoveVar(iSrcI + 1, iSrcJ + 1, iDestI + 1, iDestJ + 1);
+}
+
 
 
 
@@ -148,6 +192,34 @@ void readSensors() {
 }
 
 
+int readSerial() {
+	char cRead;
+	String sContent = "";
+
+	if (Serial.available()) {
+		cRead = Serial.read();
+		sContent.concat(cRead);
+	}
+	else {
+		return -1;
+	}
+	
+	if (sContent == REQ_POS_MSG) {
+		return REQUEST_POS;
+	}
+	else if (sContent == REQ_NEW_GAME_MSG) {
+		return REQUEST_NEW_GAME;
+	}
+	else if (sContent == MODE_MSG_BOARD) {
+		return MODE_BOARD;
+	}
+	else if (sContent == MODE_MSG_WEB) {
+		return MODE_WEB;
+	}
+	else {
+		return -1;
+	}
+}
 
 
 //-----------------------------------------
@@ -157,13 +229,46 @@ void readSensors() {
 
 void setup() {
 	Serial.begin(BAUD_RATE);
-	Serial.println("SENSORS_COMM_READY");
+	Serial.println(COMM_READY_MSG);
 
 	initMCP();
 
 	resetBoardArr();
+
+	iSerialMsg = 0;
+	//set default mode to board only
+	uiMode = MODE_BOARD;
 }
 
 void loop() {
+	//check if server sent a request
+	iSerialMsg = readSerial();
+	if (iSerialMsg > 0) {
+		//valid message received
+		if (iSerialMsg == REQUEST_POS) {
+			iMove = comparePositions();
+
+			//send latest move
+			Serial.println(iMove);
+		}
+		else if (iSerialMsg == REQUEST_NEW_GAME) {
+			resetBoardArr();
+
+			//pause loop to allow players to reposition the pieces back
+			delay(SLEEP_MS_NEW_GAME);
+		}
+		else if (iSerialMsg == MODE_BOARD || iSerialMsg == MODE_WEB) {
+			//change mode to received value
+			uiMode = iSerialMsg;
+		}
+	}
+	else
+	{
+		copyCurrToPrevPos();
+
+		readSensors();
+
+		delay(SLEEP_MS);
+	}
 
 }

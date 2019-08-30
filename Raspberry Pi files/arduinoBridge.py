@@ -49,6 +49,23 @@ def closeComm(connection):
 def printSerial(conn):
     print(conn.readline())
 
+
+def changeMode(newMode):
+    if newMode != "BOARD" and newMode != "WEB":
+        return
+    config.SET_MODE = newMode
+    
+    if newMode == "BOARD":
+        sensorConn.write(config.SENSORS_MODE_MSG_BOARD)
+    elif newMode == "WEB":
+        sensorConn.write(config.SENSORS_MODE_MSG_WEB)
+
+def newGame():
+    # whatever needs to be done on py side
+
+    sensorConn.write(config.SENSOR_REQ_NEW_GAME_MSG)
+
+
 #############
 # following for testing purposes only
 #############
@@ -65,5 +82,5 @@ while True:
 
     sensorConn.write(rInput.encode())
 
-    time.sleep(1)
+    time.sleep(2)
     printSerial(sensorConn)

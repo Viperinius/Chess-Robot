@@ -4,6 +4,10 @@
     Author:     Viperinius
 """
 
+# set "play mode" ([BOARD] board only / [WEB] with web page), is set to BOARD on sensor Arduino on startup by default
+SET_MODE = "BOARD"
+
+
 #####################
 # Stockfish settings
 #####################
@@ -58,3 +62,10 @@ ARDUINO_ACTUATOR_PORT = 'com5'
 
 # don't use any parity (if set true, uses even parity)
 ARDUINO_PARITY = False
+
+# set key message triggers for arduino
+SENSOR_REQ_POS_MSG = "<SEND_CURR_POS>"
+SENSOR_REQ_NEW_GAME_MSG = "<RESET_GAME>"
+SENSORS_COMM_READY_MSG = "<SENSORS_COMM_READY>"
+SENSORS_MODE_MSG_BOARD = "<MODE_BOARD>"
+SENSORS_MODE_MSG_WEB = "<MODE_WEB>"
