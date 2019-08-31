@@ -1,0 +1,575 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:MCP23017PCB-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "I/O Port Expander Circuit"
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCP23017 U1
+U 1 1 5D6AA727
+P 2800 2450
+F 0 "U1" H 2700 3475 50  0001 R CNN
+F 1 "MCP23017" H 2700 3400 50  0000 R CNN
+F 2 "Housings_DIP:DIP-28_W7.62mm_Socket" H 2850 1500 50  0001 L CNN
+F 3 "" H 3050 3450 50  0001 C CNN
+F 4 "I2C: 0x21" H 2700 3475 60  0000 R CNN "I2C-Address"
+	1    2800 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x16 J1
+U 1 1 5D6AA923
+P 1450 950
+F 0 "J1" H 1450 1750 50  0000 C CNN
+F 1 "Conn_01x16" H 1450 50  50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x16_Pitch2.54mm" H 1450 950 50  0001 C CNN
+F 3 "" H 1450 950 50  0001 C CNN
+	1    1450 950 
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2300 2550 750  2550
+Wire Wire Line
+	750  2550 750  1150
+Wire Wire Line
+	2300 2650 850  2650
+Wire Wire Line
+	850  2650 850  1150
+Wire Wire Line
+	2300 2750 950  2750
+Wire Wire Line
+	950  2750 950  1150
+Wire Wire Line
+	2300 2850 1050 2850
+Wire Wire Line
+	1050 2850 1050 1150
+Wire Wire Line
+	2300 2950 1150 2950
+Wire Wire Line
+	1150 2950 1150 1150
+Wire Wire Line
+	2300 3050 1250 3050
+Wire Wire Line
+	1250 3050 1250 1150
+Wire Wire Line
+	2300 3150 1350 3150
+Wire Wire Line
+	1350 3150 1350 1150
+Wire Wire Line
+	2300 3250 1450 3250
+Wire Wire Line
+	1450 3250 1450 1150
+Wire Wire Line
+	2300 1650 1550 1650
+Wire Wire Line
+	1550 1650 1550 1150
+Wire Wire Line
+	2300 1750 1650 1750
+Wire Wire Line
+	1650 1750 1650 1150
+Wire Wire Line
+	2300 1850 1750 1850
+Wire Wire Line
+	1750 1850 1750 1150
+Wire Wire Line
+	2300 1950 1850 1950
+Wire Wire Line
+	1850 1950 1850 1150
+Wire Wire Line
+	2300 2050 1950 2050
+Wire Wire Line
+	1950 2050 1950 1150
+Wire Wire Line
+	2300 2150 2050 2150
+Wire Wire Line
+	2050 2150 2050 1150
+Wire Wire Line
+	2300 2250 2150 2250
+Wire Wire Line
+	2150 2250 2150 1150
+Wire Wire Line
+	2300 2350 2250 2350
+Wire Wire Line
+	2250 2350 2250 1150
+$Comp
+L MCP23017 U2
+U 1 1 5D6AACC0
+P 2800 4950
+F 0 "U2" H 2700 5975 50  0001 R CNN
+F 1 "MCP23017" H 2700 5900 50  0000 R CNN
+F 2 "Housings_DIP:DIP-28_W7.62mm_Socket" H 2850 4000 50  0001 L CNN
+F 3 "" H 3050 5950 50  0001 C CNN
+F 4 "I2C: 0x22" H 2700 5975 60  0000 R CNN "I2C-Address"
+	1    2800 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x16 J2
+U 1 1 5D6AACEA
+P 1450 3550
+F 0 "J2" H 1450 4350 50  0000 C CNN
+F 1 "Conn_01x16" H 1450 2650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x16_Pitch2.54mm" H 1450 3550 50  0001 C CNN
+F 3 "" H 1450 3550 50  0001 C CNN
+	1    1450 3550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2250 3750 2250 4850
+Wire Wire Line
+	2250 4850 2300 4850
+Wire Wire Line
+	2300 4750 2150 4750
+Wire Wire Line
+	2150 4750 2150 3750
+Wire Wire Line
+	2300 4650 2050 4650
+Wire Wire Line
+	2050 4650 2050 3750
+Wire Wire Line
+	2300 4550 1950 4550
+Wire Wire Line
+	1950 4550 1950 3750
+Wire Wire Line
+	2300 4450 1850 4450
+Wire Wire Line
+	1850 4450 1850 3750
+Wire Wire Line
+	2300 4350 1750 4350
+Wire Wire Line
+	1750 4350 1750 3750
+Wire Wire Line
+	2300 4250 1650 4250
+Wire Wire Line
+	1650 4250 1650 3750
+Wire Wire Line
+	2300 4150 1550 4150
+Wire Wire Line
+	1550 4150 1550 3750
+Wire Wire Line
+	2300 5050 750  5050
+Wire Wire Line
+	750  5050 750  3750
+Wire Wire Line
+	2300 5150 850  5150
+Wire Wire Line
+	850  5150 850  3750
+Wire Wire Line
+	2300 5250 950  5250
+Wire Wire Line
+	950  5250 950  3750
+Wire Wire Line
+	2300 5350 1050 5350
+Wire Wire Line
+	1050 5350 1050 3750
+Wire Wire Line
+	2300 5450 1150 5450
+Wire Wire Line
+	1150 5450 1150 3750
+Wire Wire Line
+	2300 5550 1250 5550
+Wire Wire Line
+	1250 5550 1250 3750
+Wire Wire Line
+	2300 5650 1350 5650
+Wire Wire Line
+	1350 5650 1350 3750
+Wire Wire Line
+	2300 5750 1450 5750
+Wire Wire Line
+	1450 5750 1450 3750
+$Comp
+L MCP23017 U4
+U 1 1 5D6AC0AF
+P 5800 4950
+F 0 "U4" H 5700 5975 50  0001 R CNN
+F 1 "MCP23017" H 5700 5900 50  0000 R CNN
+F 2 "Housings_DIP:DIP-28_W7.62mm_Socket" H 5850 4000 50  0001 L CNN
+F 3 "" H 6050 5950 50  0001 C CNN
+F 4 "I2C: 0x24" H 5700 5975 60  0000 R CNN "I2C-Address"
+	1    5800 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x16 J4
+U 1 1 5D6AC0B5
+P 4450 3550
+F 0 "J4" H 4450 4350 50  0000 C CNN
+F 1 "Conn_01x16" H 4450 2650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x16_Pitch2.54mm" H 4450 3550 50  0001 C CNN
+F 3 "" H 4450 3550 50  0001 C CNN
+	1    4450 3550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5250 3750 5250 4850
+Wire Wire Line
+	5250 4850 5300 4850
+Wire Wire Line
+	5300 4750 5150 4750
+Wire Wire Line
+	5150 4750 5150 3750
+Wire Wire Line
+	5300 4650 5050 4650
+Wire Wire Line
+	5050 4650 5050 3750
+Wire Wire Line
+	5300 4550 4950 4550
+Wire Wire Line
+	4950 4550 4950 3750
+Wire Wire Line
+	5300 4450 4850 4450
+Wire Wire Line
+	4850 4450 4850 3750
+Wire Wire Line
+	5300 4350 4750 4350
+Wire Wire Line
+	4750 4350 4750 3750
+Wire Wire Line
+	5300 4250 4650 4250
+Wire Wire Line
+	4650 4250 4650 3750
+Wire Wire Line
+	5300 4150 4550 4150
+Wire Wire Line
+	4550 4150 4550 3750
+Wire Wire Line
+	5300 5050 3750 5050
+Wire Wire Line
+	3750 5050 3750 3750
+Wire Wire Line
+	5300 5150 3850 5150
+Wire Wire Line
+	3850 5150 3850 3750
+Wire Wire Line
+	5300 5250 3950 5250
+Wire Wire Line
+	3950 5250 3950 3750
+Wire Wire Line
+	5300 5350 4050 5350
+Wire Wire Line
+	4050 5350 4050 3750
+Wire Wire Line
+	5300 5450 4150 5450
+Wire Wire Line
+	4150 5450 4150 3750
+Wire Wire Line
+	5300 5550 4250 5550
+Wire Wire Line
+	4250 5550 4250 3750
+Wire Wire Line
+	4350 5650 4350 3750
+Wire Wire Line
+	4450 5750 4450 3750
+$Comp
+L MCP23017 U3
+U 1 1 5D6AC707
+P 5800 2450
+F 0 "U3" H 5700 3475 50  0001 R CNN
+F 1 "MCP23017" H 5700 3400 50  0000 R CNN
+F 2 "Housings_DIP:DIP-28_W7.62mm_Socket" H 5850 1500 50  0001 L CNN
+F 3 "" H 6050 3450 50  0001 C CNN
+F 4 "I2C: 0x23" H 5700 3475 60  0000 R CNN "I2C-Address"
+	1    5800 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x16 J3
+U 1 1 5D6AC70D
+P 4450 950
+F 0 "J3" H 4450 1750 50  0000 C CNN
+F 1 "Conn_01x16" H 4450 50  50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x16_Pitch2.54mm" H 4450 950 50  0001 C CNN
+F 3 "" H 4450 950 50  0001 C CNN
+	1    4450 950 
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5300 2550 3750 2550
+Wire Wire Line
+	3750 2550 3750 1150
+Wire Wire Line
+	5300 2650 3850 2650
+Wire Wire Line
+	3850 2650 3850 1150
+Wire Wire Line
+	5300 2750 3950 2750
+Wire Wire Line
+	3950 2750 3950 1150
+Wire Wire Line
+	5300 2850 4050 2850
+Wire Wire Line
+	4050 2850 4050 1150
+Wire Wire Line
+	5300 2950 4150 2950
+Wire Wire Line
+	4150 2950 4150 1150
+Wire Wire Line
+	5300 3050 4250 3050
+Wire Wire Line
+	4250 3050 4250 1150
+Wire Wire Line
+	5300 3150 4350 3150
+Wire Wire Line
+	4350 3150 4350 1150
+Wire Wire Line
+	5300 3250 4450 3250
+Wire Wire Line
+	4450 3250 4450 1150
+Wire Wire Line
+	5300 1650 4550 1650
+Wire Wire Line
+	4550 1650 4550 1150
+Wire Wire Line
+	5300 1750 4650 1750
+Wire Wire Line
+	4650 1750 4650 1150
+Wire Wire Line
+	5300 1850 4750 1850
+Wire Wire Line
+	4750 1850 4750 1150
+Wire Wire Line
+	5300 1950 4850 1950
+Wire Wire Line
+	4850 1950 4850 1150
+Wire Wire Line
+	5300 2050 4950 2050
+Wire Wire Line
+	4950 2050 4950 1150
+Wire Wire Line
+	5300 2150 5050 2150
+Wire Wire Line
+	5050 2150 5050 1150
+Wire Wire Line
+	5300 2250 5150 2250
+Wire Wire Line
+	5150 2250 5150 1150
+Wire Wire Line
+	5300 2350 5250 2350
+Wire Wire Line
+	5250 2350 5250 1150
+Wire Wire Line
+	5300 5750 4450 5750
+Wire Wire Line
+	5300 5650 4350 5650
+$Comp
+L Conn_01x04 J5
+U 1 1 5D6AD714
+P 8050 3650
+F 0 "J5" H 8050 3850 50  0000 C CNN
+F 1 "Conn_01x04" H 8050 3350 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x04_Pitch2.54mm" H 8050 3650 50  0001 C CNN
+F 3 "" H 8050 3650 50  0001 C CNN
+	1    8050 3650
+	1    0    0    -1  
+$EndComp
+Text GLabel 7850 3750 0    60   UnSpc ~ 0
+SDA
+Text GLabel 7850 3850 0    60   UnSpc ~ 0
+SCL
+$Comp
+L R R1
+U 1 1 5D6AF12E
+P 7800 3250
+F 0 "R1" V 7880 3250 50  0000 C CNN
+F 1 "10k" V 7800 3250 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7730 3250 50  0001 C CNN
+F 3 "" H 7800 3250 50  0001 C CNN
+	1    7800 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 3550 7850 3550
+Wire Wire Line
+	7800 3400 7800 3550
+Connection ~ 7800 3550
+Text GLabel 7700 3050 0    60   UnSpc ~ 0
+Pullup
+Wire Wire Line
+	7800 3100 7800 3050
+Wire Wire Line
+	7800 3050 7700 3050
+Text GLabel 6300 1650 2    60   UnSpc ~ 0
+Pullup
+Text GLabel 3300 1650 2    60   UnSpc ~ 0
+Pullup
+Text GLabel 6300 4150 2    60   UnSpc ~ 0
+Pullup
+Text GLabel 3300 4150 2    60   UnSpc ~ 0
+Pullup
+NoConn ~ 6300 4550
+NoConn ~ 6300 4650
+NoConn ~ 3300 4550
+NoConn ~ 3300 4650
+NoConn ~ 3300 2050
+NoConn ~ 3300 2150
+NoConn ~ 6300 2050
+NoConn ~ 6300 2150
+Text GLabel 6300 5350 2    60   UnSpc ~ 0
+SDA
+Text GLabel 3300 5350 2    60   UnSpc ~ 0
+SDA
+Text GLabel 3300 2850 2    60   UnSpc ~ 0
+SDA
+Text GLabel 6300 2850 2    60   UnSpc ~ 0
+SDA
+Text GLabel 6300 5250 2    60   UnSpc ~ 0
+SCL
+Text GLabel 3300 5250 2    60   UnSpc ~ 0
+SCL
+Text GLabel 3300 2750 2    60   UnSpc ~ 0
+SCL
+Text GLabel 6300 2750 2    60   UnSpc ~ 0
+SCL
+Wire Wire Line
+	7150 1300 7150 5750
+Wire Wire Line
+	7150 1300 2800 1300
+Wire Wire Line
+	5800 1300 5800 1450
+Wire Wire Line
+	2800 1300 2800 1450
+Connection ~ 5800 1300
+Wire Wire Line
+	2800 3800 7150 3800
+Wire Wire Line
+	5800 3800 5800 3950
+Connection ~ 7150 3550
+Wire Wire Line
+	2800 3800 2800 3950
+Connection ~ 5800 3800
+Wire Wire Line
+	2800 3650 7850 3650
+Wire Wire Line
+	5800 3650 5800 3450
+Wire Wire Line
+	2800 3650 2800 3450
+Connection ~ 5800 3650
+Wire Wire Line
+	7250 6100 7250 3650
+Wire Wire Line
+	2800 6100 7250 6100
+Wire Wire Line
+	5800 6100 5800 5950
+Connection ~ 7250 3650
+Wire Wire Line
+	2800 6100 2800 5950
+Connection ~ 5800 6100
+Wire Wire Line
+	3350 5550 3350 6100
+Wire Wire Line
+	3350 5750 3300 5750
+Connection ~ 3350 6100
+Wire Wire Line
+	3350 5550 3300 5550
+Connection ~ 3350 5750
+Wire Wire Line
+	3550 5650 3300 5650
+Wire Wire Line
+	3550 3050 3550 5650
+Connection ~ 3550 3800
+Wire Wire Line
+	7150 5750 6300 5750
+Connection ~ 7150 3800
+Wire Wire Line
+	6350 5550 6350 6100
+Connection ~ 6350 6100
+Wire Wire Line
+	6350 5550 6300 5550
+Wire Wire Line
+	6300 5650 6350 5650
+Connection ~ 6350 5650
+Wire Wire Line
+	6300 3250 6350 3250
+Wire Wire Line
+	6350 3250 6350 3650
+Connection ~ 6350 3650
+Wire Wire Line
+	6300 3050 6400 3050
+Wire Wire Line
+	6400 3050 6400 3800
+Connection ~ 6400 3800
+Wire Wire Line
+	6300 3150 6400 3150
+Connection ~ 6400 3150
+Wire Wire Line
+	3300 3150 3350 3150
+Wire Wire Line
+	3350 3150 3350 3650
+Connection ~ 3350 3650
+Wire Wire Line
+	3300 3250 3350 3250
+Connection ~ 3350 3250
+Wire Wire Line
+	3300 3050 3550 3050
+$Comp
+L GND #PWR01
+U 1 1 5D6B062B
+P 7400 3750
+F 0 "#PWR01" H 7400 3500 50  0001 C CNN
+F 1 "GND" H 7400 3600 50  0000 C CNN
+F 2 "" H 7400 3750 50  0001 C CNN
+F 3 "" H 7400 3750 50  0001 C CNN
+	1    7400 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR02
+U 1 1 5D6B064B
+P 7500 3450
+F 0 "#PWR02" H 7500 3300 50  0001 C CNN
+F 1 "+5V" H 7500 3590 50  0000 C CNN
+F 2 "" H 7500 3450 50  0001 C CNN
+F 3 "" H 7500 3450 50  0001 C CNN
+	1    7500 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7400 3750 7400 3650
+Connection ~ 7400 3650
+Wire Wire Line
+	7500 3450 7500 3550
+Connection ~ 7500 3550
+$EndSCHEMATC

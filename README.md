@@ -5,7 +5,8 @@
 
 
 ## Used libraries / Libraries needed to run
-+ [chessboardjs](https://github.com/oakmac/chessboardjs/)
++ [Adafruit MCP23017 Library](https://github.com/adafruit/Adafruit-MCP23017-Arduino-Library)
 + [chess.js](https://github.com/jhlywa/chess.js)
-+ [stockfish Python package](https://github.com/zhelyabuzhsky/stockfish)
++ [chessboardjs](https://github.com/oakmac/chessboardjs/)
 + [Stockfish](https://github.com/official-stockfish/Stockfish)
++ [stockfish Python package](https://github.com/zhelyabuzhsky/stockfish)
