@@ -105,7 +105,7 @@ Sheet 1 1
 Title "Sensor & Actuator Arduinos"
 Date ""
 Rev ""
-Comp ""
+Comp "Viperinius"
 Comment1 ""
 Comment2 ""
 Comment3 ""
