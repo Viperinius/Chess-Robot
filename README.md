@@ -3,6 +3,10 @@
 ## Structure Overview
 ![structOverviewImg](https://github.com/Viperinius/Chess-Robot/raw/master/structure-diagram.png)
 
+## Frame Design
+Currently draft only:
+![frameDraftImg](https://github.com/Viperinius/Chess-Robot/blob/master/3D%20files/rough-frame-draft.png)
+
 ## Current Schematic and PCB
 ![schematicImg](https://github.com/Viperinius/Chess-Robot/raw/master/PCB/schematic.png)
 
